@@ -1,0 +1,30 @@
+.Download{
+    width:60%;
+    height:250px;
+    margin:15% auto 15% auto;
+    background-color: white;
+    font-family: Verdana;
+    border-color: #5e9117;
+}
+button{
+
+    margin-left: 40%;
+    margin-right: 40%;
+    background-color: #336633;
+    color:white;
+    width:150px;
+    height:80px;
+    border-color:#336633;
+    border-style: solid;
+    font-size: 22px;
+}
+button:hover{
+    background-color: #73AD21;
+    border-color:#73AD21 ;
+}
+p{
+    font-size: 22px;
+    text-align: center;
+    color:#336633;
+    padding:3%;
+}

@@ -14,9 +14,8 @@ tr:hover{
 }
 th{
     text-align: center;
-    font-size: 100%;
+    font-size: 18px;
     font-family: Verdana;
-    line-height: 100%;
     width:50%;
 }
 
