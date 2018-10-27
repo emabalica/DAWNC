@@ -1,3 +1,8 @@
+/*const UP = require('../Js/Main');
+//import {UserName} from '../Js/Main.js';
+console.log("te numesti"+UP.UserName);
+
+document.getElementById('nume1').innerHTML=UP.UserName;*/
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -22,8 +27,8 @@ window.fbAsyncInit = function() {
 
 function statusChangeCallback(response){
     if(response.status === 'connected') {
-        testAPI();
         console.log('logged in and authenticated');
+        GetUserData();
         setElements(true);
         window.connected=true;
 
@@ -34,28 +39,7 @@ function statusChangeCallback(response){
         window.connected=false;
     }
 }
-var UserName;
-var City;
-var Email;
-function testAPI(){
-    FB.api('/me?fields= name,location,hometown,email',function(response){
-        var location=response.location.name;
-        var UserName=response.name;
-        var mail=response.email;
-        window.UserName=response.name;
-        document.getElementById('nume').innerHTML=window.UserName;
-        window.City=response.location;
-        window.Email=response.email;
-        if(response &&!response.error){
-            console.log(response);
-            console.log("this is the location:"+location);
-            console.log("this is the name:"+UserName);
-            console.log("this is the email:"+mail);
-            console.log("te cheama",nume);
-        }
 
-    });
-}
 function checkLoginState() {
     FB.getLoginStatus(function(response) {
 
@@ -64,27 +48,37 @@ function checkLoginState() {
 }
 function setElements(isLoggedIn){
     if(isLoggedIn){
-        document.getElementById('profile').style.display='block';
         document.getElementById('myImage').style.display='inline-block';
-        document.getElementById('heading').style.display='none';
 
     }else{
-        document.getElementById('profile').style.display='none';
-        document.getElementById('heading').style.display='block';
         document.getElementById('myImage').style.display='none';
 
     }
 }
-
 function changeImage() {
     var image = document.getElementById('myImage');
     if (image.src.match("account.png")) {
-        image.src = "./images/account2.png";
+        image.src = "../images/account2.png";
     }
 }
 function changeImage2() {
     var image = document.getElementById('myImage');
     if (image.src.match("account2.png")) {
-        image.src = "./images/account.png";
+        image.src = "../images/account.png";
     }
+}
+
+var UserName;
+var HomeTown;
+var CurrentCity;
+var Email;
+function GetUserData(){
+    FB.api('/me?fields= name,location,hometown,email',function(response){
+        window.UserName=response.name;
+        window.CurrentCity=response.location.name;
+        window.Email=response.email;
+        document.getElementById('nume1').innerHTML=window.UserName;
+        document.getElementById('location1').innerHTML=window.CurrentCity;
+        document.getElementById('email1').innerHTML=window.Email;
+    });
 }
