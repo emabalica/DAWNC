@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../scratch.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Statistics.css">
 </head>
 <body>
+<script src="../Js/Main.js"></script>
+<div class="up">
+    <ul id="menu">
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="Download.html">Download</a></li>
+        <li><a href="../pages/About.html">About Allergies</a></li>
+        <li><a href="../pages/Statistics.html">Statistics</a></li>
+    </ul>
+
+
+    <div class="dropdown"  onmouseover="changeImage()" onmouseout="changeImage2()" style="float:right;">
+        <img id="myImage" src="../images/account.png" width="50" height="50">
+        <div class="dropdown-content">
+            <a href="../pages/UserProfile.html">Profile</a>
+            <a href="#">Notifications</a>
+            <a href="#">Settings</a>
+            <a><fb:login-button
+                    autologoutlink="true"
+                    id="fb-button"
+                    scope="public_profile,email,user_location,user_friends,user_hometown"
+                    onlogin="checkLoginState();">
+            </fb:login-button></a>
+        </div>
+    </div>
+</div>
+
+<table class="UserData">
+    <tr>
+        <th id="titlu">Statistici generale</th>
+    </tr>
+    <tr>
+        <th class="Left">Utilizatori inscrisi</th>
+        <th >23222</th>
+    </tr>
+    <tr>
+        <th class="Left">Notificari trimise</th>
+        <th >34633334</th>
+    </tr>
+    <tr>
+        <th class="Left">Alergia curenta:</th>
+        <th >Alergia la mucegai</th>
+    </tr>
+</table>
 
 </body>
 </html>
