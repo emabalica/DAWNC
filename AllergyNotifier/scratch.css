@@ -35,7 +35,8 @@ body {
 
 li{
 
-    display:inline-block;
+    float:left;
+    //display:inline-block;
     width:24.5%;
     height:100%;
     text-align: center;
