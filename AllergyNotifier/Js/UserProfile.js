@@ -80,5 +80,6 @@ function GetUserData(){
         document.getElementById('nume1').innerHTML=window.UserName;
         document.getElementById('location1').innerHTML=window.CurrentCity;
         document.getElementById('email1').innerHTML=window.Email;
+        document.getElementById('Picture').innerHTML="<img src='"+response.picture.data.url+"'>";
     });
 }
