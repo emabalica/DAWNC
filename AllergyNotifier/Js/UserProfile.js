@@ -73,7 +73,7 @@ var HomeTown;
 var CurrentCity;
 var Email;
 function GetUserData(){
-    FB.api('/me?fields= name,location,hometown,email',function(response){
+    FB.api('/me?fields= name,location,hometown,email,picture.width(50).height(50)',function(response){
         window.UserName=response.name;
         window.CurrentCity=response.location.name;
         window.Email=response.email;
