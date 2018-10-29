@@ -1,0 +1,18 @@
+.flex-container{
+    diplay:flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    width:60%;
+    height: 60%;
+    margin:10px;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    left: 15%;
+}
+.main-idea{
+    background-color: #f1f1f1;
+}
+.more-info-link > a{
+    color:#336633;
+}
