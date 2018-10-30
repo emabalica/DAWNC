@@ -7,7 +7,7 @@
     border-collapse: collapse;
 }
 tr{
-    height:33.3%;
+    height:25%;
 }
 tr:hover{
     color: #5e9117;
@@ -18,8 +18,11 @@ th{
     font-family: Verdana;
     width:50%;
 }
-#titlu{
-    position:absolute;
+#titlu {
+    text-align: center;
+    font-size: 18px;
+    font-family: Verdana;
+
 }
 .Left{
     background-color: #73AD21;
