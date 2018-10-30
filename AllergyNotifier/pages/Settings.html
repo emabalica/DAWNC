@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <meta name="description" content="Seasonal allergies notifier">
+    <meta name="author" content="co=authored by Ema Balica, Rebegea Bogdan, Sima Paul Vladut">
+    <meta name="keywords" content="allergy, allergies, food allergy, treatment, allergic reaction, anaphylaxis, insect sting allergies">
+    <link rel="stylesheet" type="text/css" href="../scratch.css">
+    <link rel="stylesheet" type="text/css" href="../Css/UserProfile.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Settings.css">
+</head>
+<body>
+<script src="../Js/UserProfile.js"></script>
+
+<div class="up">
+    <ul id="menu">
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="Download.html">Download</a></li>
+        <li><a href="../pages/About.html">About Allergies</a></li>
+        <li><a href="../pages/Statistics.html">Statistics</a></li>
+    </ul>
+
+    <div class="dropdown"  onmouseover="changeImage()" onmouseout="changeImage2()" style="float:right;">
+        <img id="myImage" src="../images/account.png" width="50" height="50">
+        <div class="dropdown-content">
+            <a href="../pages/UserProfile.html">Profile</a>
+            <a href="../pages/Notifications.html">Notifications</a>
+            <a href="../pages/Settings.html">Settings</a>
+            <a><fb:login-button
+                    autologoutlink="true"
+                    id="fb-button"
+                    scope="public_profile,email,user_location,user_friends,user_hometown"
+                    onlogin="checkLoginState();">
+            </fb:login-button></a>
+        </div>
+    </div>
+</div>
+<table class="UserData">
+    <tr>
+        <th class="Left">Notifications:</th>
+        <th >
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </th>
+    </tr>
+    <tr>
+        <th class="Left">Notify friends:</th>
+        <th>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </th>
+    </tr>
+
+</table>
+
+</body>
+</html>
