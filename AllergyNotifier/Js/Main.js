@@ -62,6 +62,7 @@ function changeImage2() {
     }
 }
 
+/*
 var UserName='un';
 var HomeTown;
 var CurrentCity;
@@ -73,5 +74,5 @@ function GetUserData(){
         window.email=response.email;
 
     });
-}
+}*/
 //module.exports.UserName=UserName;
