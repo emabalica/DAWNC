@@ -16,8 +16,8 @@
 .main-idea{
     background-color: #f1f1f1;
     padding:10px;
-    //margin:10px;
-    //border: 3px solid #73AD21;
+    
+    
     font-family: Verdana;
 }
 .more-info-link > a{
@@ -26,5 +26,5 @@
 }
 .main-idea > h2{
     color:#73AD21;
-    //text-align:center;
+    
 }
