@@ -56,7 +56,7 @@ article {
     font-size: 13px;
     font-weight: 300;
     line-height: 24px;
-    -moz-hyphens: auto;
+    
     hyphens: auto;
 }
 h1, h2, h3 {
@@ -104,7 +104,7 @@ article img {
 }
 
 pre, code, a[property="schema:citation"] {
-    -moz-hyphens: none;
+    
     hyphens: none;
 }
 code:not([class]) {
