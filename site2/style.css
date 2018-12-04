@@ -41,7 +41,7 @@ body {
     min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    margin-left:-75px;
+    margin-left:-50px;
 }
 
 .dropdown-content a {
@@ -145,14 +145,14 @@ input:checked + .slider:before {
     display:none;
     position: relative;
 }
-tr{
+.UserData tr{
     height:133px;
 
 }
-tr:hover{
+.UserData tr:hover{
     color: #5e9117;
 }
-th{
+.UserData th{
 
     width:600px;
     text-align: center;
@@ -164,3 +164,9 @@ th{
     background-color: #73AD21;
     color:white;
 }
+
+.UData tr{
+    height:30px;
+    font-family: Verdana;
+}
+
