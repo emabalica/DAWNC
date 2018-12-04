@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notifier</title>
+    <meta name="description" content="Seasonal allergies notifier">
+    <meta name="author" content="co=authored by Ema Balica, Rebegea Bogdan, Sima Paul Vladut">
+    <meta name="keywords" content="allergy, allergies, food allergy, treatment, allergic reaction, anaphylaxis, insect sting allergies">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<script src="./app.js"></script>
+
+
+<div class="up">
+
+    <div class="dropdown"  onmouseover="changeImage()" onmouseout="changeImage2()" style="float:right;">
+        <img id="myImage" src="./images/account.png" width="50" height="50">
+        <div class="dropdown-content">
+
+            <a><fb:login-button
+                    autologoutlink="true"
+                    id="fb-button"
+                    scope="public_profile,email,user_location,user_friends,user_hometown"
+                    onlogin="checkLoginState();"
+                    style="left:25%;">
+            </fb:login-button></a>
+            <table class="UData">
+                <tr>
+                    <th class="names">Notifications:</th>
+                    <th >
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="names">Notify friends:</th>
+                    <th>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="button_login" >
+    <div id="fb-button">
+        <fb:login-button
+                autologoutlink="true"
+                id="fb-button"
+                scope="public_profile,email,user_location,user_friends,user_hometown"
+                onlogin="checkLoginState();">
+        </fb:login-button>
+    </div>
+    <h3 id="heading">Log in to receive notifications</h3>
+    <div id="profile">You've been successfully logged in, <p id="nume"></p> </div>
+</div>
+<table class="UserData" id="1">
+    <tr>
+        <th class="Left">Statistics:</th>
+        <th id="Picture"></th>
+    </tr>
+
+    </tr>
+</table>
+</body>
+</html>
