@@ -23,34 +23,36 @@
     </style>
 </head>
 <body >
-<article typeof="schema:ScholarlyArticle" resource="#">
+<article itemscope itemtyepe="http://schema.org/ScholarlyArticle">
   <h1>Github authors</h1>
-  <section>
+  <section >
     <ol>
-      <li property="schema:author" typeof="sa:ContributorRole">
-        <a property="schema:author" href="http://github.com/BogdanFi" typeof="schema:Person">
-          <span property="schema:givenName">Bogdan Florin</span>
-          <span property="schema:familyName">Rebegea</span>
+      <li itemscope itemtype=http://schema.org/Person">
+        <a href="  http://github.com/BogdanFi" itemprop="url">
+          <span itemprop="givenName">Bogdan </span>
+          <span itemprop="additionalName">Florin</span>
+          <span property="familyName">Rebegea</span>
         </a>
       </li>
-      <li property="schema:author" typeof="sa:ContributorRole">
-        <a property="schema:author" href="http://github.com/SimaVlad" typeof="schema:Person">
-          <span property="schema:givenName">Paul Vladut</span>
-          <span property="schema:familyName">Sima</span>
+      <li itemscope itemtype=http://schema.org/Person">
+        <a href="http://github.com/SimaVlad" itemprop="url">
+          <span itemprop="givenName">Paul</span>
+          <span itemprop="additionalName">Vladut</span>
+          <span itemprop="schema:familyName">Sima</span>
         </a>
       </li>
-      <li property="schema:author" typeof="sa:ContributorRole">
-        <a property="schema:author" href="http://github.com/emabalica" typeof="schema:Person">
-          <span property="schema:givenName">Ema</span>
-          <span property="schema:familyName">Balica</span>
+      <li itemscope itemtype="http://schema.org/Person">
+        <a href="http://github.com/emabalica" itemprop="url">
+          <span itemprop="givenName">Ema</span>
+          <span itemprop="familyName">Balica</span>
         </a>
       </li>
 
     </ol>
     <ol>
-      <li id="scienceai">
-        <a href="http://info.uaic.ro" typeof="schema:Corporation">
-          <span property="schema:name">info.uaic.ro</span>
+      <li id="scienceai" itemscope itemtype="http://schema.org/EducationalOrganization">
+        <a href="http://www.info.uaic.ro" itemprop="url">
+          <span itemprop="name"> Facultatea de Informatica Iasi </span>
         </a>
       </li>
     </ol>
@@ -59,7 +61,6 @@
 
   <h1>Arhitecture</h1>
   <section>
-    <img src="arhitecture2.png"></img></br></br>
     <h2>Project development stages</h2>
     <p>The project has 2 main development stages:</p>
     <ol>
@@ -73,7 +74,7 @@
       The implementation of the design is done using front end languages like Html,Css and Javascipt.</p>
   </section>
 
-  <section typeof="sa:MaterialsAndMethods">
+  <section>
     <h3>2.The functionality of the interface</h3>
     <p>The main functionalities of the website are:</p>
     <ul>
@@ -82,7 +83,7 @@
         user that information the website will take from his/her account and will have the possibility to accept or decline the use of his/hers account data. After accepting
         the data will be saved into a database. This is necessary because without saving the user information into a database, there is no way of knowing which user has
         registered or accepted to receive notifications.
-        </br></br><img src="../Screenshot/startpage.jpg" alt="profile" ></img></br></br>
+        Also, the user's friends
       </li>
       <li>
         <b>Information:</b> This will provide statistics about the data collected. The statistics will be desplayed in a 2D/3D format using SVG and WebGL.
@@ -91,11 +92,19 @@
         <b>Notifications:</b> The users will receive in browser notifications about the spread of seasonal allergies. The notifications will also provide the user
         with information about allergies(e.g. how to prevent them) via external data which will be loaded on the website if the user will request it. This will be done by
         loading the content of web pages(which were preselected) using AJAX.
-        The user will also have the possibility to switch notifications on/off through the profile drop-down menu on the upper side of the page
-        </br></br><img src="../Screenshot/user.jpg" alt="profile" ></img>
       </li>
     </ul>
   </section>
+  <section>
+      <h2>Data modeling</h2>
+      <p>We'll create a table using the MySql database management system which contains all our users. The data about the user is extracted using the Facebook API, which allows our users to
+      connect to our application with their Facebook account. </p>
+      <p>For out data to be more organised we used the  <!--<meta>--> tag because it allows browsers to understand the information on the web page
+      so it can reach more users.</p>
+      <img itemprop="image" src="Screenshot_1.png" alt="microdate" />
+  </section>
+
+
 </article>
 
 </body>
