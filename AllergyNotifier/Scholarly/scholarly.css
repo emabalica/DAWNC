@@ -392,3 +392,9 @@ aside[typeof="schema:WPSideBar"] {
         background: transparent;
     }
 }
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
