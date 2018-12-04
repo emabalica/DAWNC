@@ -137,8 +137,8 @@ input:checked + .slider:before {
 .UserData{
     background-color: white;
     margin: 15% auto 15% auto;
-    width:60%;
-    height:200px;
+    width:80%;
+    height:400px;
     border: 1px solid #73AD21;
     border-collapse: collapse;
 
@@ -146,16 +146,18 @@ input:checked + .slider:before {
     position: relative;
 }
 tr{
-    height:25%;
+    height:133px;
+
 }
 tr:hover{
     color: #5e9117;
 }
 th{
+
+    width:600px;
     text-align: center;
     font-size: 18px;
     font-family: Verdana;
-    width:50%;
 }
 
 .Left{
