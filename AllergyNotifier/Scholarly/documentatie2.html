@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AllergyNotifier</title>
+    <link rel="stylesheet" href="scholarly.css" />
+    <style>
+        pre
+        {
+            font-family: Courier, 'New Courier', monospace;
+            line-height: 1.2;
+            font-size: 12px;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+        @font-face {
+            font-family: 'HelveticaNeue';
+
+        }
+    </style>
+</head>
+<body >
+<article typeof="schema:ScholarlyArticle" resource="#">
+  <h1>Github authors</h1>
+  <section>
+    <ol>
+      <li property="schema:author" typeof="sa:ContributorRole">
+        <a property="schema:author" href="http://github.com/BogdanFi" typeof="schema:Person">
+          <span property="schema:givenName">Bogdan Florin</span>
+          <span property="schema:familyName">Rebegea</span>
+        </a>
+      </li>
+      <li property="schema:author" typeof="sa:ContributorRole">
+        <a property="schema:author" href="http://github.com/SimaVlad" typeof="schema:Person">
+          <span property="schema:givenName">Paul Vladut</span>
+          <span property="schema:familyName">Sima</span>
+        </a>
+      </li>
+      <li property="schema:author" typeof="sa:ContributorRole">
+        <a property="schema:author" href="http://github.com/emabalica" typeof="schema:Person">
+          <span property="schema:givenName">Ema</span>
+          <span property="schema:familyName">Balica</span>
+        </a>
+      </li>
+
+    </ol>
+    <ol>
+      <li id="scienceai">
+        <a href="http://info.uaic.ro" typeof="schema:Corporation">
+          <span property="schema:name">info.uaic.ro</span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+
+  <h1>Arhitecture</h1>
+  <section>
+    <h2>Project development stages</h2>
+    <p>The project has 2 main development stages:</p>
+    <ol>
+      <li>The devolopment of a Web Interface</li>
+      <li>The development of the functionality of the interface</li>
+    </ol>
+  </section>
+  <section>
+    <h3>1.The Web interface</h3>
+    <p>The Web Interface refers to the visual aspects of the website.At this step the design of the website is conceived.
+      The implementation of the design is done using front end languages like Html,Css and Javascipt.</p>
+  </section>
+
+  <section>
+    <h3>2.The functionality of the interface</h3>
+    <p>The main functionalities of the website are:</p>
+    <ul>
+      <li><b>Registration and login/logout:</b> The user has the ability to create an account and log into it by using his/hers facebook account.
+      This functionality is implemented using a login API from Facebook. When clocking on the Login button, a pop up window will appear on the screen, which will show the
+        user that information the website will take from his/her account and will have the possibility to accept or decline the use of his/hers account data. After accepting
+        the data will be saved into a database. This is necessary because without saving the user information into a database, there is no way of knowing which user has
+        registered or accepted to receive notifications.
+        Also, the user's friends
+      </li>
+      <li>
+        <b>Information:</b> This will provide statistics about the data collected. The statistics will be desplayed in a 2D/3D format using SVG and WebGL.
+      </li>
+      <li>
+        <b>Notifications:</b> The users will receive in browser notifications about the spread of seasonal allergies. The notifications will also provide the user
+        with information about allergies(e.g. how to prevent them) via external data which will be loaded on the website if the user will request it. This will be done by
+        loading the content of website which were preselected by using AJAX.
+      </li>
+    </ul>
+  </section>
+</article>
+
+</body>
+</html>
