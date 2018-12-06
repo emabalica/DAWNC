@@ -80,25 +80,25 @@
     </section>
     <section itemprop="articleSection">
         <h3 role="doc-subtitle">1.The Web interface</h3>
-        <p>The Web Interface refers to the visual aspects of the website.At this step the design of the website is conceived.
+        <p role="contentinfo">The Web Interface refers to the visual aspects of the website.At this step the design of the website is conceived.
             The implementation of the design is done using front end languages like Html,Css and Javascipt.</p>
     </section>
 
     <section itemprop="articleSection">
         <h3 role="doc-subtitle">2.The functionality of the interface</h3>
         <p>The main functionalities of the website are:</p>
-        <ul>
-            <li><b>Registration and login/logout:</b> The user has the ability to create an account and log into it by using his/hers facebook account.
+        <ul role="list">
+            <li role="listitem"><b>Registration and login/logout:</b> The user has the ability to create an account and log into it by using his/hers facebook account.
                 This functionality is implemented using a login API from Facebook. When clocking on the Login button, a pop up window will appear on the screen, which will show the
                 user that information the website will take from his/her account and will have the possibility to accept or decline the use of his/hers account data. After accepting
                 the data will be saved into a database. This is necessary because without saving the user information into a database, there is no way of knowing which user has
                 registered or accepted to receive notifications.
                 <br><br><img src="../Screenshot/startpage.jpg" alt="profile" ><br><br>
             </li>
-            <li>
+            <li role="listitem">
                 <b>Information:</b> This will provide statistics about the data collected. The statistics will be displayed in a 2D/3D format using SVG and WebGL.
             </li>
-            <li>
+            <li role="listitem">
                 <b>Notifications:</b> The users will receive in browser notifications about the spread of seasonal allergies. The notifications will also be sent
                 to the user's friends. The order in which notifications are sent will be determined by how dangerous or common the allergy is. The notifications will also provide the user
                 with information about allergies(e.g. how to prevent them) via external data which will be loaded on the website if the user will request it. This will be done by
@@ -110,15 +110,16 @@
     </section>
     <section itemprop="articleSection">
         <h2 role="doc-subtitle">Data modeling</h2>
-        <p>We'll create a table using the MySql database management system which contains all the information we need about our users. People can connect to our web page
-            with their Facebook account, which allows our application to collect data using the Facebook API and insert them into our table.</p>
-        <p>We will have a single table in which we will save all the necessary data.</p>
+        <p role="contentinfo">We'll create a table using the MySql database management system which contains all the information we need about our users. People can connect to our web page
+            with their Facebook account, which allows our application to collect data using the Facebook API and insert them into our table.
+        </p>
+        <p role="contentinfo">We will have a single table in which we will save all the necessary data.</p>
         <img src="DB.png" alt="db"><br><br>
-        <p>For out data to be more organised we used the  <!--<meta>--> tag because it allows browsers to understand the information on the web page
+        <p role="contentinfo">For out data to be more organised we used the  <!--<meta>--> tag because it allows browsers to understand the information on the web page
             so it can reach more users.</p>
         <img itemprop="image" src="Screenshot_1.png" alt="microdate" />
         <h3 role="doc-subtitle">Local storage</h3>
-        <p>Our users connect to out website using their Facebook account. Because of that we don't need to use local storage or cookies because
+        <p role="contentinfo">Our users connect to out website using their Facebook account. Because of that we don't need to use local storage or cookies because
             all the data about our users can be extracted  and saved locally using the Facebook API.
         </p>
     </section>
