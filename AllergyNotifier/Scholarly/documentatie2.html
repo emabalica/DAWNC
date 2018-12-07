@@ -64,13 +64,13 @@
   <section itemprop="articleSection">
     <h2 role="doc-subtitle" >Project description</h2>
     <p itemprop="about">This project aims to alert its users to possible allergies in its area and to generate dynamic statistics for these allergies.When you agree to receive notifications, the application will also pick up your list of friends on facebook to inform them about allergies.
-      The notification process - within the web browser - will take a certain priority or frequency. Priority will be set depending on how old you are in the system</p>
+      The notification process - within the web browser - will take a certain priority or frequency depending the information you provided about yourself and the allergy type</p>
     <img src="diagrama.png" alt=""><br><br>
   </section>
   <h2 role="doc-subtitle">Architecture</h2>
   <section  itemprop="articleSection">
     <img src="arhitecture2.png" alt="architecture"><br><br>
-    <p>Diagram1: The architecture</p><br><br>
+    <p>Diagram: The architecture</p><br><br>
     <h3 role="doc-subtitle">Project development stages</h3>
     <p>The project has 2 main development stages:</p>
     <ol>
@@ -93,18 +93,18 @@
         user that information the website will take from his/her account and will have the possibility to accept or decline the use of his/hers account data. After accepting
         the data will be saved into a database. This is necessary because without saving the user information into a database, there is no way of knowing which user has
         registered or accepted to receive notifications.
-        <br><br><img src="../Screenshot/startpage.jpg" alt="profile" ><br><br>
+        <br><br><img src="startpage.jpg" alt="profile" ><br><br>
       </li>
       <li role="listitem">
         <b>Information:</b> This will provide statistics about the data collected. The statistics will be displayed in a 2D/3D format using SVG and WebGL.
       </li>
       <li role="listitem">
         <b>Notifications:</b> The users will receive in browser notifications about the spread of seasonal allergies. The notifications will also be sent
-        to the user's friends. The order in which notifications are sent will be determined by how dangerous or common the allergy is. The notifications will also provide the user
+        to the user's friends. The order in which notifications are sent will be determined by how common or dangerous for the user the allergy is. The notifications will also provide the user
         with information about allergies(e.g. how to prevent them) via external data which will be loaded on the website if the user will request it. This will be done by
         loading the content of web pages(which were preselected) using AJAX.
         The user will also have the possibility to switch notifications on/off through the profile drop-down menu on the upper side of the page
-        <br><br><img src="../Screenshot/user.jpg" alt="profile">
+        <br><br><img src="user.jpg" alt="profile">
       </li>
     </ul>
   </section>
@@ -115,7 +115,7 @@
     </p>
     <p role="contentinfo">We will have a single table in which we will save all the necessary data.</p>
     <img src="DB.png" alt="db"><br><br>
-    <p role="contentinfo">For out data to be more organised we used the  <!--<meta>--> tag because it allows browsers to understand the information on the web page
+    <p role="contentinfo">For out data to be more organised we used the  "meta" tag because it allows browsers to understand the information on the web page
       so it can reach more users.</p>
     <img itemprop="image" src="Screenshot_1.png" alt="microdate" />
     <h3 role="doc-subtitle">Local storage</h3>
