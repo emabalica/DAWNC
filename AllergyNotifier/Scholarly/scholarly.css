@@ -1,4 +1,5 @@
 
+
 /*
   Mostly override colours, plus support the article styling.
   The latter should be made into a separate CSS at some point, that can just be reused by whoever
@@ -59,7 +60,7 @@ article {
     
     hyphens: auto;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-variant: small-caps;
     text-align: center;
     font-weight: 300;
@@ -68,7 +69,7 @@ h1 {
     padding-top:  16px;
     padding-bottom: 16px;
     letter-spacing: .75px;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 32px;
 }
 h2 {
@@ -76,14 +77,19 @@ h2 {
     padding-bottom: 0;
     margin-bottom: 0;
     letter-spacing: .75px;
-    font-size: 20px;
+    font-size: 24px;
 }
 h3 {
     padding-top: 16px;
     padding-bottom: 0;
     letter-spacing:.5px;
-    font-size: 16px;
+    font-size: 20px;
 }
+h4 {
+     padding-top: 16px;
+     padding-bottom: 0;
+     letter-spacing:.5px;
+     font-size: 16px;}
 dfn {
     text-decoration: underline;
 }
