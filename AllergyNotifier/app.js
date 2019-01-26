@@ -1,3 +1,8 @@
+var loc=[];
+
+var risk_zones=[{'lat1':46,'lat2':49,"long1":27,"long2":28},
+    {'lat1':13,'lat2':47,"long1":13.5,"long2":36.6},
+    {'lat1':40.2,'lat2':40.3,"long1":22,"long2":23}];
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -12,6 +17,21 @@ window.fbAsyncInit = function() {
     });
 };
 
+
+function CheckIfUserIsInRiskZone(latitude,longitude){
+    var i=0;
+    while (i<risk_zones.length){
+        if(latitude>=risk_zones[i]['lat1']&& latitude<=risk_zones[i]['lat2']&&
+        longitude>=risk_zones[i]['long1'] &&longitude<=risk_zones[i]['long2'])
+        {
+            console.log('in the risk zone');
+            return true;
+        }
+        else{console.log("safe");}
+        i=i+1;
+    }
+    return false;
+}
 (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
@@ -20,12 +40,49 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
+function onGranted() {
+   console.log("granted");
+}
+
+function onDenied() {
+    console.log("denied");
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    } else {
+        console.log("geolocation is not supported");
+    }
+}
+function showPosition(position) {
+    console.log("latitude "+position.coords.latitude+"longitude " +position.coords.longitude);
+    loc.push(position.coords.latitude);
+    loc.push(position.coords.longitude);
+}
 function statusChangeCallback(response){
     if(response.status === 'connected') {
         testAPI();
         console.log('logged in and authenticated');
         setElements(true);
         window.connected=true;
+        // getLocation();
+        // console.log("THIS "+loc[0]);
+        // if(CheckIfUserIsInRiskZone(loc[0],loc[1])==true)
+        // {
+        //     Push.Permission.request(onGranted, onDenied);
+        //     Push.create("Hello!", {
+        //         body: "You are in the risk zone!!",
+        //         icon: "../AllergyNotifier/images/account.png",
+        //         timeout: 5000,
+        //         onClick: function() {
+        //             console.log(this);
+        //         }
+        //     });
+        // }else{
+        //     console.log("not in risk zone");
+        // }
 
     }else{
 
@@ -34,9 +91,7 @@ function statusChangeCallback(response){
         window.connected=false;
     }
 }
-var UserName;
-var City;
-var Email;
+
 function testAPI(){
     FB.api('/me?fields= name,location,hometown,email',function(response){
         var location=response.location.name;
@@ -88,3 +143,32 @@ function changeImage2() {
         image.src = "./images/account.png";
     }
 }
+
+getLocation();
+var sendAll = document.querySelector(".send-all");
+sendAll.onclick=function(){
+    getLocation();
+    console.log("THIS "+loc[0]);
+    if(CheckIfUserIsInRiskZone(loc[0],loc[1])==true)
+    {
+        Push.Permission.request(onGranted, onDenied);
+        Push.create("Hello!", {
+            body: "You are in the risk zone!!",
+            timeout: 5000,
+            onClick: function() {
+                console.log(this);
+            }
+        });
+    }else{
+        console.log("not in risk zone");
+    }
+}
+function ignoreFavicon(req, res, next) {
+    if (req.originalUrl === '/favicon.ico') {
+        res.status(204).json({nope: true});
+    } else {
+        next();
+    }
+}
+app.use(ignoreFavicon);
+
