@@ -2,12 +2,12 @@
     background-color: white;
     margin: 15% auto 15% auto;
     width:60%;
-    height:200px;
+    height:400px;
     border: 1px solid #73AD21;
     border-collapse: collapse;
 }
 tr{
-    height:25%;
+    height:20%;
 }
 tr:hover{
     color: #5e9117;

@@ -1,6 +1,7 @@
 var requestButton = document.querySelector(".request-btn");
 var showButton = document.querySelector(".show-btn");
-
+// var express = require('express');
+// var app=express()
 function onGranted() {
     requestButton.style.background = "#73AD21";
 }
@@ -16,7 +17,6 @@ requestButton.onclick = function() {
 showButton.onclick = function() {
     Push.create("Hello!", {
         body: "This is a web notification!",
-        icon: "icon.png",
         timeout: 5000,
         onClick: function() {
             console.log(this);
