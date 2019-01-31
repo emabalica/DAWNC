@@ -7,9 +7,11 @@
     <meta name="author" content="co=authored by Ema Balica, Rebegea Bogdan, Sima Paul Vladut">
     <meta name="keywords" content="allergy, allergies, food allergy, treatment, allergic reaction, anaphylaxis, insect sting allergies">
     <link rel="stylesheet" type="text/css" href="scratch.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.5/push.js"></script>
 </head>
 <body>
+
+<script src="../AllergyNotifier/Js/Carrier.js"></script>
 <script src="./app.js"></script>
 <div class="up">
     <ul id="menu">
@@ -43,7 +45,7 @@
             onlogin="checkLoginState();">
     </fb:login-button>
     <h3 id="heading">Log in to receive notifications</h3>
-    <div id="profile">You've been successfully logged in, <p id="nume"></p> </div>
+    <div id="profile">You've been successfully logged in, <p id="nume"></p> <p id="email"></p> </div>
 </div>
 
 </body>

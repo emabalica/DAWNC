@@ -1,8 +1,9 @@
-var loc=[];
 
-var risk_zones=[{'lat1':46,'lat2':49,"long1":27,"long2":28},
-    {'lat1':13,'lat2':47,"long1":13.5,"long2":36.6},
-    {'lat1':40.2,'lat2':40.3,"long1":22,"long2":23}];
+var loc=[];
+var Connected=true;
+var risk_zones=[{'lat1':46,'lat2':49,"long1":27,"long2":28,'allergy':'bees'},
+    {'lat1':48,'lat2':48.6,"long1":13.5,"long2":36.6,'allergy':'air'},
+    {'lat1':40.2,'lat2':40.3,"long1":22,"long2":23,'allergy':'chemical'}];
 
 window.fbAsyncInit = function() {
     FB.init({
@@ -15,22 +16,35 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
     });
+
 };
+
 
 
 function CheckIfUserIsInRiskZone(latitude,longitude){
     var i=0;
     while (i<risk_zones.length){
         if(latitude>=risk_zones[i]['lat1']&& latitude<=risk_zones[i]['lat2']&&
-        longitude>=risk_zones[i]['long1'] &&longitude<=risk_zones[i]['long2'])
+        longitude>=risk_zones[i]['long1'] &&longitude<=risk_zones[i]['long2']
+        &&(localStorage.getItem('notifications')=='on'))
         {
-            console.log('in the risk zone');
-            return true;
+            if ('bees'==risk_zones[i]['allergy'] &&localStorage.getItem('bees')=='on')
+                {console.log('in the risk zone');
+                return [true , risk_zones[i]['allergy']];}
+            if ('skin'==risk_zones[i]['allergy'] &&localStorage.getItem('skin')=='on')
+            {console.log('in the risk zone');
+                return [true , risk_zones[i]['allergy']];}
+            if ('air'==risk_zones[i]['allergy'] &&localStorage.getItem('air')=='on')
+            {console.log('in the risk zone');
+                return [true , risk_zones[i]['allergy']];}
+            if ('chemical'==risk_zones[i]['allergy'] &&localStorage.getItem('chemical')=='on')
+            {console.log('in the risk zone');
+                return [true , risk_zones[i]['allergy']];}
         }
         else{console.log("safe");}
         i=i+1;
     }
-    return false;
+    return [false,0];
 }
 (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,40 +80,26 @@ function statusChangeCallback(response){
         testAPI();
         console.log('logged in and authenticated');
         setElements(true);
-        window.connected=true;
-        // getLocation();
-        // console.log("THIS "+loc[0]);
-        // if(CheckIfUserIsInRiskZone(loc[0],loc[1])==true)
-        // {
-        //     Push.Permission.request(onGranted, onDenied);
-        //     Push.create("Hello!", {
-        //         body: "You are in the risk zone!!",
-        //         icon: "../AllergyNotifier/images/account.png",
-        //         timeout: 5000,
-        //         onClick: function() {
-        //             console.log(this);
-        //         }
-        //     });
-        // }else{
-        //     console.log("not in risk zone");
-        // }
+        Connected=true;
+        // window.connected=true;
 
     }else{
 
         console.log('not authenticated');
         setElements(false);
-        window.connected=false;
+        Connected=false;
+        // window.connected=false;
     }
 }
+
 
 function testAPI(){
     FB.api('/me?fields= name,location,hometown,email',function(response){
         var location=response.location.name;
         var UserName=response.name;
         var mail=response.email;
-        window.UserName=response.name;
-        document.getElementById('nume').innerHTML=window.UserName;
-        window.City=response.location;
+        document.getElementById('nume').innerHTML=UserName;
+        document.getElementById('email').innerHTML=mail;
         window.Email=response.email;
         if(response &&!response.error){
             console.log(response);
@@ -111,6 +111,8 @@ function testAPI(){
 
     });
 }
+
+
 function checkLoginState() {
     FB.getLoginStatus(function(response) {
 
@@ -145,20 +147,36 @@ function changeImage2() {
 }
 
 getLocation();
-var sendAll = document.querySelector(".send-all");
-sendAll.onclick=function(){
+// var sendAll = document.querySelector(".send-all");
+// sendAll.onclick=function(){
+function sendAll(){
+
     getLocation();
-    console.log("THIS "+loc[0]);
-    if(CheckIfUserIsInRiskZone(loc[0],loc[1])==true)
+    var allergy=CheckIfUserIsInRiskZone(loc[0],loc[1]);
+    var message;
+    if (allergy[1]=='bees'){
+        message='You are in the risk zone, there are bees in the area.';
+    }else if(allergy[1]=='air'){
+        message='You are in the risk zone, the air is polluted here, chemicals have been used in this area.';
+    }else if(allergy[1]=='chemical'){
+        message='You are in the risk zone, the air is polluted with allergens which may trigger asthma.';
+    }
+    if(allergy[0]==true)
     {
         Push.Permission.request(onGranted, onDenied);
         Push.create("Hello!", {
-            body: "You are in the risk zone!!",
+            body: message,
             timeout: 5000,
             onClick: function() {
                 console.log(this);
             }
         });
+        // var div=document.createElement("DIV");
+        // div.setAttribute("id","loader");
+
+        //var x=html('<object data="https://www.everydayhealth.com/allergies/types-of-allergies.aspx">');
+        window.open("https://www.everydayhealth.com/allergies/types-of-allergies.aspx");
+        // alert('anannanjanj');
     }else{
         console.log("not in risk zone");
     }
@@ -171,4 +189,3 @@ function ignoreFavicon(req, res, next) {
     }
 }
 app.use(ignoreFavicon);
-
