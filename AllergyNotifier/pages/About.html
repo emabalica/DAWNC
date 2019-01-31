@@ -10,7 +10,10 @@
     <link rel="stylesheet" type="text/css" href="../Css/About.css">
 </head>
 <body>
+
+
 <script src="../Js/Main.js"></script>
+
 <div class="up">
     <ul id="menu">
         <li ><a href="../index.html">Home</a></li>
@@ -34,48 +37,37 @@
         </div>
     </div>
 </div>
-<div class="flex-container">
-    <section class="main-idea">
-        <h2>Introduction</h2>
-        <p class="main-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nullam gravida velit nec turpis interdum, a porta est euismod.
-            Aenean placerat aliquet ipsum, bibendum placerat tellus fermentum quis.
-            Nulla facilisis semper leo eget iaculis. In hac habitasse platea dictumst.
-            Proin vestibulum felis quam, non tristique dolor sollicitudin vitae.
-            Nunc egestas nisi sit amet purus vehicula, at dignissim sapien porttitor.
-            In non nibh sit amet nibh viverra vehicula sed a turpis. Suspendisse potenti.
-            Vestibulum fringilla quam eu pretium scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas tincidunt mi at egestas congue. Donec pulvinar eget eros ac sodales.</p>
-        <aside>For more information click this link <span class="more-info-link"> <a href="">
-            This will be a link to a page</a></span>
-        </aside>
-    </section>
-    <section class="main-idea">
-        <h2>What are allergies?</h2>
-        <p class="main-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nullam gravida velit nec turpis interdum, a porta est euismod.
-            Aenean placerat aliquet ipsum, bibendum placerat tellus fermentum quis. Nulla facilisis semper leo eget iaculis.
-            In hac habitasse platea dictumst. Proin vestibulum felis quam, non tristique dolor sollicitudin vitae.
-            Nunc egestas nisi sit amet purus vehicula, at dignissim sapien porttitor.
-            In non nibh sit amet nibh viverra vehicula sed a turpis.
-            Suspendisse potenti. Vestibulum fringilla quam eu pretium scelerisque.</p>
-        <aside>For more information click this link <span class="more-info-link"> <a href="">
-            This will be a link to a page</a></span>
-        </aside>
-    </section>
-    <section class="main-idea">
-        <h2>Treatments</h2>
-        <p class="main-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nullam gravida velit nec turpis interdum, a porta est euismod.
-            Aenean placerat aliquet ipsum, bibendum placerat tellus fermentum quis. Nulla facilisis semper leo eget iaculis.
-            In hac habitasse platea dictumst. Proin vestibulum felis quam, non tristique dolor sollicitudin vitae.
-            Nunc egestas nisi sit amet purus vehicula, at dignissim sapien porttitor.
-            In non nibh sit amet nibh viverra vehicula sed a turpis.
-            Suspendisse potenti. Vestibulum fringilla quam eu pretium scelerisque.</p>
-        <aside>For more information click this link <span class="more-info-link"> <a href="">
-            This will be a link to a page</a></span>
-        </aside>
-    </section>
+
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+
+<script>
+
+    function Load1(){
+        $("#bees").html('<object data="https://www.webmd.com/skin-problems-and-treatments/insect-stings#1">');
+    }
+    function Load2(){
+        $("#air").html('<object data="https://www.webmd.com/asthma/guide/what-is-asthma#1">');
+    }
+    function Load3(){
+        $("#chemical").html('<object data="https://www.webmd.com/allergies/chemical-allergies#1">');
+    }
+    function Load4(){
+        $("#skin").html('<object data="https://www.webmd.com/allergies/skin-allergies#1">');
+    }
+</script>
+
+<div id="load_pages">
+    <div  id="bees"></div>
+    <button id="loader1" onclick="Load1()">Show data about bee stings allergies</button>
+    <div id="air"></div>
+    <button id="loader2" onclick="Load2()">Show data about asthma</button>
+    <div id="chemical"></div>
+    <button id="loader3" onclick="Load3()">Show data about allergies to chemical substances</button>
+    <div id="skin"></div>
+    <button id="loader4" onclick="Load4()">Show data about skin allergies</button>
 </div>
+
 </body>
 </html>

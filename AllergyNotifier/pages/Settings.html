@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../Css/Settings.css">
 </head>
 <body>
-<script src="../Js/UserProfile.js"></script>
+
 
 <div class="up">
     <ul id="menu">
@@ -40,23 +40,51 @@
     <tr>
         <th class="Left">Notifications:</th>
         <th >
-            <label class="switch">
-                <input type="checkbox" checked>
+            <label class="switch" >
+                <input type="checkbox" onclick="changeStorage('notifications','on','off','notifications');" id="notifications" checked>
                 <span class="slider round"></span>
             </label>
         </th>
     </tr>
     <tr>
-        <th class="Left">Notify friends:</th>
+        <th class="Left">Bees:</th>
         <th>
             <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox" onclick="changeStorage('bees','on','off','bees');" id="bees" checked>
                 <span class="slider round"></span>
             </label>
         </th>
     </tr>
-
+    <tr>
+        <th class="Left">Skin allergens:</th>
+        <th>
+            <label class="switch">
+                <input type="checkbox"  onclick="changeStorage('skin','on','off','skin');" id="skin" checked>
+                <span class="slider round"></span>
+            </label>
+        </th>
+    </tr>
+    <tr>
+        <th class="Left">Chemical substances:</th>
+        <th>
+            <label class="switch">
+                <input type="checkbox"  onclick="changeStorage('chemical','on','off','chemical');" id="chemical" checked>
+                <span class="slider round"></span>
+            </label>
+        </th>
+    </tr>
+    <tr>
+        <th class="Left">Polluted air:</th>
+        <th>
+            <label class="switch">
+                <input type="checkbox"  onclick="changeStorage('air','on','off','air');" id="air" checked>
+                <span class="slider round"></span>
+            </label>
+        </th>
+    </tr>
 </table>
+<p id="1"></p>
+<script src="../Js/UserProfile.js"></script>
 
 </body>
 </html>
