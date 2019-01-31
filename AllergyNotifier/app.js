@@ -147,8 +147,7 @@ function changeImage2() {
 }
 
 getLocation();
-// var sendAll = document.querySelector(".send-all");
-// sendAll.onclick=function(){
+
 function sendAll(){
 
     getLocation();
@@ -171,12 +170,7 @@ function sendAll(){
                 console.log(this);
             }
         });
-        // var div=document.createElement("DIV");
-        // div.setAttribute("id","loader");
 
-        //var x=html('<object data="https://www.everydayhealth.com/allergies/types-of-allergies.aspx">');
-        window.open("https://www.everydayhealth.com/allergies/types-of-allergies.aspx");
-        // alert('anannanjanj');
     }else{
         console.log("not in risk zone");
     }
