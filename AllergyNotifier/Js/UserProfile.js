@@ -5,37 +5,31 @@ var checkbox3=document.getElementById('skin');
 var checkbox4=document.getElementById('chemical');
 var checkbox5=document.getElementById('air');
 
-// var notifications=getCookieValue('notifications');
-
-// console.log('notif ',notifications);
-
-
-
 
 if (localStorage.getItem('notifications')=='on')
     {checkbox1.checked=true;}
 else {checkbox1.checked=false;}
 
 if (localStorage.getItem('bees')=='on'){
-    checkbox2.cecked=true;
+    checkbox2.checked=true;
 }
 else{
     checkbox2.checked=false;
 }
 if (localStorage.getItem('skin')=='on'){
-    checkbox3.cecked=true;
+    checkbox3.checked=true;
 }
 else{
     checkbox3.checked=false;
 }
-if (localStorage.getItem('air')=='on'){
-    checkbox4.cecked=true;
+if (localStorage.getItem('chemical')=='on'){
+    checkbox4.checked=true;
 }
 else{
     checkbox4.checked=false;
 }
-if (localStorage.getItem('chemical')=='on'){
-    checkbox5.cecked=true;
+if (localStorage.getItem('air')=='on'){
+    checkbox5.checked=true;
 }
 else{
     checkbox5.checked=false;
@@ -52,84 +46,6 @@ function changeStorage(item,value1,value2,id){
     }
 }
 
-function getCookieValue(key){
-    d = cookies.split(';');
-    for (i = 0; i < d.length; i++) {
-        c = d[i].split('=');
-        if (c[0] == key) {
-            return c[1];
-        }
-    }
-    return 0;
-}
-function updateCookie(key, value) {
-    console.log('d= '+cookies);
-    d = cookies.split(';');
-
-    var final_cookie='';
-    for (i = 0; i < d.length; i++) {
-        c = d[i].split('=');
-        if (c[0] == key) {
-            c[1] = value;
-            d[i] = c[0] + '=' + c[1];
-            console.log("found ",c[0]);
-        }
-        if (i > 0) {
-            final_cookie = final_cookie + d[i] + ';';
-        } else {
-            final_cookie = d[i] + ';';
-        }
-        final_cookie=final_cookie+expires + ";path=/";
-    }
-    return final_cookie;
-}
-// var delete_cookie = function(name) {
-//     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-// };
-function changeState(key,value1,value2,id){
-
-    var checkbox=document.getElementById(id);
-    if (checkbox.checked == true){
-        final_cookie1=updateCookie(key,value1);
-        console.log("f "+final_cookie1);
-        // var c=document.cookie.split(';');
-        // console.log("c="+c);
-        // delete_cookie(key);
-        // console.log("c="+c);
-        // for(i=0;i<c.length;i++){
-        //     console.log("co "+c[i].split('=')[0]);
-        //     if(c[i].split('=')[0]==key){
-        //         console.log(c[i]);
-        //         c[i]=c[i].split(key+'='+value2).join(key+'='+value1+";"+expires + ";");
-        //         console.log(c[i]);
-        //         document.cookie=c[i];
-        //     }
-        // }
-
-    } else {
-        final_cookie1=updateCookie(key,value2);
-        console.log("f "+final_cookie1);
-        // var c=document.cookie.split(';');
-        // console.log("c="+c);
-        // delete_cookie(key);
-        // console.log("c="+c);
-        // for(i=0;i<c.length;i++){
-        //     console.log("co "+c[i].split('=')[0]);
-        //     if(c[i].split('=')[0]==key){
-        //         console.log(c[i]);
-        //         c[i]=c[i].split(key+'='+value1).join(key+'='+value2+";"+expires + ";");
-        //         console.log(c[i]);
-        //         document.cookie=c[i];
-        //     }
-        // }
-    }
-
-    // document.cookie=document.cookie.split(key+'='+value1).join(key+'='+value2)
-    // console.log('cookie ',document.cookie+' !!!');
-    // document.cookie=final_cookie1;
-    console.log('updated '+document.cookie);
-
-}
 
 
 window.fbAsyncInit = function() {
