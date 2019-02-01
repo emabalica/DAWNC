@@ -100,13 +100,13 @@ function testAPI(){
         var mail=response.email;
         document.getElementById('nume').innerHTML=UserName;
         document.getElementById('email').innerHTML=mail;
-        window.Email=response.email;
+//         window.Email=response.email;
         if(response &&!response.error){
             console.log(response);
             console.log("this is the location:"+location);
             console.log("this is the name:"+UserName);
             console.log("this is the email:"+mail);
-            console.log("te cheama",nume);
+//             console.log("te cheama",nume);
         }
 
     });
